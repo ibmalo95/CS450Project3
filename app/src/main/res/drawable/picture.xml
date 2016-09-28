@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:drawable="@drawable/card_back"
+        android:maxLevel="0"/>
+    <item
+        android:drawable="@drawable/chameleon"
+        android:maxLevel="1"/>
+    <item
+        android:drawable="@drawable/elephant"
+        android:maxLevel="2"/>
+    <item
+        android:drawable="@drawable/fox"
+        android:maxLevel="3"/>
+    <item
+        android:drawable="@drawable/frog"
+        android:maxLevel="4"/>
+    <item
+        android:drawable="@drawable/manatee"
+        android:maxLevel="5"/>
+    <item
+        android:drawable="@drawable/penguin"
+        android:maxLevel="6"/>
+    <item
+        android:drawable="@drawable/squirrel"
+        android:maxLevel="7"/>
+    <item
+        android:drawable="@drawable/turtle"
+        android:maxLevel="8"/>
+
+</level-list>
