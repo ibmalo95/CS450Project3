@@ -1,5 +1,6 @@
 package com.example.setup.cs450project3;
 
+
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageButton;
@@ -10,12 +11,13 @@ import android.widget.ImageButton;
 
 public class Card {
 
-    private ImageButton ib;
+//    private ImageButton ib;
+    private int id;
     private int level;
     private int state;
 
-    public Card(ImageButton ib, int level, int state) {
-        this.ib = ib;
+    public Card(int id, int level, int state) {
+        this.id = id;
         this.level = level;
         this.state = state;
     }
@@ -28,11 +30,23 @@ public class Card {
         this.state = 0;
     }
 
+    public void setId(int imgButton) {
+        this.id = imgButton;
+    }
+
     public Integer getLevel() {
         return this.level;
     }
-    public ImageButton getIb() {
-        return this.ib;
+    public Integer getId() {
+        return this.id;
+    }
+    public Integer getState() {return this.state;}
+
+    public void updateState(ImageButton ib) {
+        if (this.getState() == 1) {
+            Drawable drawable = (ib.getDrawable());
+            drawable.setLevel(this.getLevel());
+        }
     }
 }
 

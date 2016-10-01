@@ -1,33 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".MainFragment">
-
-    <TextView
-        android:id="@+id/click_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="50sp"
-        android:layout_marginBottom="15dp"
-        android:text="0"/>
+    android:gravity="center">
 
     <include
         layout="@layout/game_board"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <TextView
+        android:padding="40dp"
+        android:id="@+id/click_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="100sp"
+        android:layout_marginBottom="15dp"
+        android:text="0"/>
+
     <Button
         android:id="@+id/play_again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        android:layout_below="@id/fragment_main"
         android:text="@string/play_again"/>
-
-
-
 
 </LinearLayout>

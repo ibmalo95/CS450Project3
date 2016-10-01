@@ -28,5 +28,30 @@
     <item
         android:drawable="@drawable/turtle"
         android:maxLevel="8"/>
+    <item
+        android:drawable="@drawable/bear"
+        android:maxLevel="9"/>
+    <item
+        android:drawable="@drawable/hummingbird"
+        android:maxLevel="10"/>
+    <item
+        android:drawable="@drawable/moose"
+        android:maxLevel="11"/>
+    <item
+        android:drawable="@drawable/panda"
+        android:maxLevel="12"/>
+    <item
+        android:drawable="@drawable/red_velvet_mite"
+        android:maxLevel="13"/>
+    <item
+        android:drawable="@drawable/rhino"
+        android:maxLevel="14"/>
+    <item
+        android:drawable="@drawable/tiger"
+        android:maxLevel="15"/>
+    <item
+        android:drawable="@drawable/walrus"
+        android:maxLevel="16"/>
+
 
 </level-list>
