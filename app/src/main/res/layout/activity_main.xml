@@ -12,6 +12,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:layout_gravity="center"
         android:orientation="vertical">
 
@@ -19,7 +20,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="50sp"
+            android:textSize="60sp"
             android:layout_marginBottom="15dp"
             android:textColor="#00b300"
             android:text="@string/title" />

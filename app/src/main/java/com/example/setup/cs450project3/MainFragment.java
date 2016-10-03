@@ -5,6 +5,8 @@ package com.example.setup.cs450project3;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
@@ -33,6 +35,11 @@ public class MainFragment extends Fragment {
     private TextView clickCount = null;
     private Integer count;
 
+    SoundPool sp = null;
+    int bloopSound = 0;
+    int wrongSound = 0;
+    int matchSound = 0;
+
 
     public MainFragment() {}
 
@@ -46,6 +53,11 @@ public class MainFragment extends Fragment {
         picture = new HashMap();
         compare = new ArrayList();
         count = 0;
+
+        this.sp = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
+        this.bloopSound = this.sp.load(getContext(), R.raw.bloop, 1);
+        this.wrongSound = this.sp.load(getContext(), R.raw.wrong, 1);
+        this.matchSound = this.sp.load(getContext(), R.raw.match, 1);
 
         initGame();
     }
@@ -110,6 +122,7 @@ public class MainFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     // Play sound when clicked
+                    sp.play(bloopSound, 1f, 1f, 1, 0, 1);
 
                     // Increment click count
                     count = count + 1;
@@ -147,6 +160,7 @@ public class MainFragment extends Fragment {
             @Override
             public void run() {
                 if (card1.getLevel() == card2.getLevel()) {
+                    sp.play(matchSound, 1f, 1f, 1, 0, 1);
                     // keep flipped over
                     ((ImageButton) root1.findViewById(card1.getId())).setOnClickListener(null);
                     ((ImageButton) root1.findViewById(card2.getId())).setOnClickListener(null);
@@ -154,6 +168,7 @@ public class MainFragment extends Fragment {
                     gameWon(root1);
                 }
                 else {
+                    sp.play(wrongSound, 1f, 1f, 1, 0, 1);
                     Drawable drawable1 = ((ImageButton) root1.findViewById(card1.getId())).getDrawable();
                     Drawable drawable2 = ((ImageButton) root1.findViewById(card2.getId())).getDrawable();
                     drawable1.setLevel(0);
