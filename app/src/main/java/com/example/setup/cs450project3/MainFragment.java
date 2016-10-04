@@ -2,6 +2,8 @@ package com.example.setup.cs450project3;
 
 
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;

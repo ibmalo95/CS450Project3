@@ -15,7 +15,6 @@ public class MainActivity extends Activity {
     }
 
     public void loading() {
-        System.out.println("this happened");
         View loading = findViewById(R.id.loading);
         loading.setVisibility(View.VISIBLE);
     }
