@@ -9,8 +9,8 @@
     </style>
 
     <style name="card">
-        <item name="android:layout_width">100dp</item>
-        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_width">@dimen/img_button_width</item>
+        <item name="android:layout_height">@dimen/img_button_height</item>
         <item name="android:src">@drawable/picture</item>
         <item name="android:scaleType">centerCrop</item>
 

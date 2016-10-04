@@ -10,8 +10,8 @@
         android:id="@+id/click_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="70sp"
-        android:layout_marginBottom="15dp"
+        android:textSize="@dimen/textsize_clickcount"
+        android:layout_marginBottom="@dimen/clickcount_margin"
         android:text="0"/>
 
     <include
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        android:padding="20dp"
+        android:padding="@dimen/play_again_padding"
         android:text="@string/play_again"/>
 
 

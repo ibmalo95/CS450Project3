@@ -74,7 +74,10 @@ public class MainFragment extends Fragment {
         return root;
     }
 
-    // initiate gameState
+    /**
+     * Defines the state of the game by assigning the maxLevel
+     * that will be at each image button.
+     */
     public void initGame() {
         Random randomizer = new Random();
         for (int i = 1; i <= 16; i++) {
@@ -98,19 +101,21 @@ public class MainFragment extends Fragment {
 
     }
 
+    /**
+     * Initiates the clickCount and ImageButton views
+     * @param root
+     */
     public void initViews(View root) {
         final View root1 = root;
-
+        // Set the value of clickCount to count
         this.clickCount = (TextView) root.findViewById(R.id.click_count);
         this.clickCount.setText(count.toString());
+
         Resources res = getResources();
-        Log.i("gamestate:", "newState");
-        // TODO: get the total children of the gridlayout and replace with 16
         for (int i = 1; i <= 16; i++) {
             final int imageNumber = i;
 
             int id = res.getIdentifier("image" + i, "id", getActivity().getPackageName());
-
 
             // should only happen the first time onCreateView is called
             if ((gameState.get(i-1).getId()) == 0) {
@@ -144,6 +149,10 @@ public class MainFragment extends Fragment {
         }
     }
 
+    /**
+     * Should only have to update on orientation changes
+     * @param root
+     */
     public void updateImgButtons(View root) {
         for (int i = 0; i < gameState.size(); i++) {
             Card card = gameState.get(i);
@@ -151,6 +160,12 @@ public class MainFragment extends Fragment {
         }
     }
 
+    /**
+     * Compares whether two Cards are equal by checking their levels
+     * @param one
+     * @param two
+     * @param root
+     */
     public void comparison(Card one, Card two, View root) {
         final Card card1 = one;
         final Card card2 = two;
@@ -161,7 +176,6 @@ public class MainFragment extends Fragment {
             public void run() {
                 if (card1.getLevel() == card2.getLevel()) {
                     sp.play(matchSound, 1f, 1f, 1, 0, 1);
-                    // keep flipped over
                     ((ImageButton) root1.findViewById(card1.getId())).setOnClickListener(null);
                     ((ImageButton) root1.findViewById(card2.getId())).setOnClickListener(null);
                     compare.clear();
@@ -182,9 +196,13 @@ public class MainFragment extends Fragment {
         }, 1000);
     }
 
+    /**
+     * Check if the game has been won by comparing each cards state
+     * @param root
+     */
     public void gameWon(View root) {
         final View view = root;
-        Button playAgain = (Button) view.findViewById(R.id.play_again);
+        final Button playAgain = (Button) view.findViewById(R.id.play_again);
         int won = 0;
         for (int i = 0; i < gameState.size(); i++) {
             if (gameState.get(i).getState() == 1) {
@@ -197,11 +215,16 @@ public class MainFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     reset(view);
+                    playAgain.setVisibility(View.GONE);
                 }
             });
         }
     }
 
+    /**
+     * Reset the game when playAgain is hit
+     * @param view
+     */
     public void reset(View view) {
         for (int i = 0; i < gameState.size(); i++) {
             Drawable d = ((ImageButton) view.findViewById(gameState.get(i).getId())).getDrawable();
@@ -215,12 +238,4 @@ public class MainFragment extends Fragment {
         initViews(view);
 
     }
-
-
-    @Override
-    public void onPause() {
-        super.onPause();
-
-    }
-
 }

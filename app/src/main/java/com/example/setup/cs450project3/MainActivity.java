@@ -8,16 +8,10 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 
-    public static final String RESTORE_PREF = "restore_pref";
-    private MainFragment mainFragment;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mainFragment = (MainFragment) getFragmentManager().findFragmentById(R.id.fragment_main);
     }
 
     public void loading() {
@@ -30,5 +24,4 @@ public class MainActivity extends Activity {
         View loading = findViewById(R.id.loading);
         loading.setVisibility(View.GONE);
     }
-
 }

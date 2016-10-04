@@ -6,12 +6,12 @@ import android.view.View;
 import android.widget.ImageButton;
 
 /**
+ * Keeps track of ids of imageButtons, maxLevel, and state
  * Created by Ina on 9/27/16.
  */
 
 public class Card {
 
-//    private ImageButton ib;
     private int id;
     private int level;
     private int state;
